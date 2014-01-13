@@ -30,6 +30,7 @@ class Spree::Admin::BarcodeController < Spree::Admin::BaseController
   
   private
 
+  # Can we remove this OR atleast comment it out?
   # leave this in here maybe for later, not used anymore
   def code
     barcode = get_barcode

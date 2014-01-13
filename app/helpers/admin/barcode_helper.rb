@@ -10,6 +10,8 @@ module Admin::BarcodeHelper
     pdf = Prawn::Document.new( :page_size => [ layout[:width].mm , layout[:height].mm ] , :margin => layout[:margin].mm )
   end
 
+  # [TODO] I think this should be currency_symbol instead of current_symbol.
+  # 
   def current_symbol
     @currency = Spree::Config[:currency]
     @currency == 'NGN' ? 'N' : Money::Currency.table.select { |key, value| value.has_value?(currency) }.values[0][:symbol]
